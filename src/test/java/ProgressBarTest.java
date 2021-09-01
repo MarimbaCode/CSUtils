@@ -111,11 +111,59 @@ public class ProgressBarTest {
 
     }
 
+    @Test
+    public final void progressBarTest1(){
 
+        ProgressBar progressBar = new ProgressBar();
 
+        String expected = "[" + "|".repeat(50) + "-".repeat(50) + "]";
 
+        assertEquals(expected, progressBar.createBar(1,2));
 
+    }
 
+    @Test
+    public final void progressBarTest2(){
 
+        ProgressBar progressBar = new ProgressBar();
+
+        String expected = "[" + "|".repeat(25) + "-".repeat(75) + "]";
+
+        assertEquals(expected, progressBar.createBar(1.0,4.0));
+
+    }
+
+    @Test
+    public final void progressBarTest3(){
+
+        ProgressBar progressBar = new ProgressBar();
+
+        String expected = "[" + "|".repeat(12) + "-".repeat(88) + "]";
+
+        assertEquals(expected, progressBar.createBar((short)1,(short)8));
+
+    }
+
+    @Test
+    public final void progressBarTest4(){
+
+        ProgressBar progressBar = new ProgressBar();
+
+        String expected = "[" + "|".repeat(6) + "-".repeat(94) + "]";
+
+        assertEquals(expected, progressBar.createBar(1L,16L));
+
+    }
+
+    @Test
+    public final void progressBarTest5(){
+
+        ProgressBar progressBar = new ProgressBar();
+
+        String expected = "[" + "|".repeat(75) + "-".repeat(25) + "]";
+
+        assertEquals(expected, progressBar.createBar(75,100));
+
+    }
 
 }

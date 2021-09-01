@@ -76,16 +76,16 @@ public class ProgressBar {
     }
 
     public String createBar(byte part, byte total){
-        return createBar(((double)part) / total);
+        return createBar(((double)part) / (double)total);
     }
     public String createBar(short part, short total){
-        return createBar(((double)part) / total);
+        return createBar(((double)part) / (double)total);
     }
     public String createBar(int part, int total){
-        return createBar(((double)part) / total);
+        return createBar(((double)part) / (double)total);
     }
     public String createBar(long part, long total){
-        return createBar(((double)part) / total);
+        return createBar(((double)part) / (double)total);
     }
     public String createBar(float part, float total){
         return createBar(part/total);
@@ -96,10 +96,10 @@ public class ProgressBar {
 
     protected String createBar(double progress){
         StringBuilder builder = new StringBuilder();
-        progress = Math.floor(progress) * length;
+        int repeats = (int)(progress * length);
         builder.append(openChar)
-                .append(String.valueOf(fillChar).repeat((int) progress))
-                .append(String.valueOf(emptyChar).repeat((int) (length - progress)))
+                .append(String.valueOf(fillChar).repeat(repeats))
+                .append(String.valueOf(emptyChar).repeat(100 - repeats))
                 .append(closeChar);
         return builder.toString();
     }
