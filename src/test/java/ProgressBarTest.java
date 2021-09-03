@@ -166,4 +166,15 @@ public class ProgressBarTest {
 
     }
 
+    @Test
+    public final void progressBarTest6(){
+
+        ProgressBar progressBar = new ProgressBar();
+
+        String expected = "[" + "|".repeat(100) + "-".repeat(0) + "]";
+
+        assertEquals(expected, progressBar.createBar(101,100));
+
+    }
+
 }

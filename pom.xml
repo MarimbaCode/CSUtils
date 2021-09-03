@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.thejrdev</groupId>
-    <artifactId>CSUtils</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>csutils</artifactId>
+    <version>1.0</version>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -20,5 +21,14 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
+
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub MarimbaCode Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/MarimbaCode/CSUtils</url>
+        </repository>
+    </distributionManagement>
     
 </project>
